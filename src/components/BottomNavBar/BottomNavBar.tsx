@@ -1,21 +1,22 @@
-import { useState } from 'react';
-import styles from './BottomNavBar.module.css';
+import { useState } from "react";
+import styles from "./BottomNavBar.module.css";
+import { Icon } from "../../assets/icon"; // ajuste o caminho conforme necessário
+import { IconNames } from "../../assets/icon/icons-svg";
 
 const tabs = [
-  { name: 'Início', icon: '🏠' },
-  { name: 'Carteira', icon: '👥' },
-  { name: 'Meta', icon: '📊' },
-  { name: 'Hub', icon: '✏️' },
-];
+  { name: "Início", icon: "home" },
+  { name: "Carteira", icon: "carteira" },
+  { name: "Meta", icon: "meta" },
+  { name: "Hub", icon: "hub" },
+] satisfies { name: string; icon: IconNames }[];
 
 export default function BottomNavBar() {
-  const [activeTab, setActiveTab] = useState('Início');
+  const [activeTab, setActiveTab] = useState("Início");
 
   return (
     <nav className={styles.container}>
       {tabs.map((tab) => {
         const isActive = activeTab === tab.name;
-
         return (
           <div
             key={tab.name}
@@ -24,13 +25,19 @@ export default function BottomNavBar() {
           >
             <div
               className={`${styles.iconWrapper} ${
-                isActive ? styles.active : ''
+                isActive ? styles.active : ""
               }`}
             >
               <span
-                className={`${styles.icon} ${isActive ? styles.iconActive : ''}`}
+                className={`${styles.icon} ${
+                  isActive ? styles.iconActive : ""
+                }`}
               >
-                {tab.icon}
+                <Icon
+                  name={tab.icon}
+                  size={24}
+                  color={isActive ? "#fff" : "#000"}
+                />
               </span>
               <span
                 className={`${styles.label} ${
