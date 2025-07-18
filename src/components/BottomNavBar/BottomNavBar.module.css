@@ -5,9 +5,9 @@
   width: 100%;
   padding: 10px 0;
   bottom: 0;
+  position: fixed;
   border-top-left-radius: 40px;
-  border-top-right-radius:40px;
-  position: absolute;
+  border-top-right-radius:40px;;
   background-color: rgba(242, 242, 242, 0.92);
 }
 

@@ -1,0 +1,15 @@
+.container {
+  height: 100vh;
+}
+
+.content {
+  padding-bottom: calc(90px + env(safe-area-inset-bottom));
+}
+
+
+.nav{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+}

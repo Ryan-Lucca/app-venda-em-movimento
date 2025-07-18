@@ -1,12 +1,23 @@
-import styles from './styles/App.module.css'
-import BottomNavBar from './components/BottomNavBar/BottomNavBar.tsx'
-function App() {
+import Layout from './components/Layout/Layout'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Carteira from "./pages/Carteira/Carteira";
 
+export default function App() {
   return (
-    <div className={styles.container}>
-      <BottomNavBar />
-    </div>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        {/* Telas COM BottomNavBar */}
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/carteira" element={<Carteira />} />
+          {/* <Route path="/meta" element={<Meta />} />
+          <Route path="/hub" element={<Hub />} /> */}
+        </Route>
 
-export default App
+        {/* Telas SEM BottomNavBar
+        <Route path="/login" element={<Login />} /> */}
+      </Routes>
+    </BrowserRouter>
+  );
+}
