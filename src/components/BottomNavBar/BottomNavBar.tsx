@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./BottomNavBar.module.css";
-import { Icon } from "../../assets/icon"; // ajuste o caminho conforme necessário
+import { Icon } from "../../assets/icon"; 
 import { IconNames } from "../../assets/icon/icons-svg";
 
 const tabs = [
@@ -20,7 +20,6 @@ export default function BottomNavBar() {
         return (
           <div
             key={tab.name}
-            className={styles.tabItem}
             onClick={() => setActiveTab(tab.name)}
           >
             <div
@@ -36,13 +35,12 @@ export default function BottomNavBar() {
                 <Icon
                   name={tab.icon}
                   size={24}
-                  color={isActive ? "#fff" : "#000"}
+                  color={isActive ? "#fff" : "#1F1F1F"}
                 />
               </span>
               <span
                 className={`${styles.label} ${
-                  isActive ? styles.labelActive : styles.labelInactive
-                }`}
+                  isActive ? styles.labelActive : styles.labelInactive}`}
               >
                 {tab.name}
               </span>
