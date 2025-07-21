@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  bottom: 0;
+  position: fixed;
+  border-top-left-radius: 40px;
+  border-top-right-radius:40px;;
+  background-color: rgba(242, 242, 242, 0.92);
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+
+.active {
+  background-color: #1BA285;
+  color: white;
+  transform: scale(1.1);
+}
+
+.label {
+  font-size: 12px;
+}
+
+.labelActive {
+  color: white;
+  font-weight: 500;
+}
+
+.labelInactive {
+  color: #1F1F1F;
+}

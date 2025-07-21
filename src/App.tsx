@@ -1,37 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import appLogo from '../public/favicon.svg'
-import PWABadge from './components/PWABadge.tsx'
-import './styles/App.css'
+import Layout from './components/Layout/Layout'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home, Carteira, Meta, Hub} from "./pages"
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={appLogo} className="logo" alt="vendas-em-movimento logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>vendas-em-movimento</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <PWABadge />
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/carteira" element={<Carteira />} />
+          <Route path="/meta" element={<Meta />} />
+          <Route path="/hub" element={<Hub />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
