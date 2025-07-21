@@ -1,4 +1,4 @@
-export default function Carteira() {
+export function Carteira() {
   return (<div>
       <h1>Carteira</h1>
       <p>

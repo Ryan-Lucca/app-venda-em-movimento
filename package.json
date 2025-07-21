@@ -37,6 +37,7 @@
     "sharp-ico": "0.1.5"
   },
   "bin": {
-    "create-component": "./scripts/create-component.cjs"
+    "create-component": "./scripts/create-component.cjs",
+    "create-page": "./scripts/create-page.cjs"
   }
 }
