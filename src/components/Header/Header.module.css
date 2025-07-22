@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  padding: 0 12px;
+  justify-content: space-between;
+}
+
+.perfil{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: #EBEBEB;
+    justify-content: center;
+    align-items: center;
+}
+
+.reloadButton{
+  background-color: transparent;
+  height: min-content;
+  width: min-content;
+  border: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
