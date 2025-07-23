@@ -4,10 +4,11 @@ import { Icon } from '../../assets/icon';
 
 interface HeaderProps {
   reload?: boolean;
-  show?: boolean; // se false, não renderiza nada
+  show?: boolean;
+  title?: string; // Novo: título personalizado
 }
 
-export default function Header({ reload = true, show = true }: HeaderProps) {
+export default function Header({ reload = true, show = true, title }: HeaderProps) {
   const [nomeExecutivo, setNomeExecutivo] = useState('');
 
   const buscarNome = async () => {
@@ -27,7 +28,7 @@ export default function Header({ reload = true, show = true }: HeaderProps) {
     if (show) buscarNome();
   }, [show]);
 
-  if (!show) return null; // 👈 Oculta a header se show === false
+  if (!show) return null;
 
   const primeiroNome = nomeExecutivo?.split(' ')[0] || 'Carregando...';
 
@@ -39,9 +40,12 @@ export default function Header({ reload = true, show = true }: HeaderProps) {
         .join('')
     : '--';
 
+  // Novo: definir título
+  const tituloFinal = title || `Olá, ${primeiroNome}`;
+
   return (
     <header className={styles.container}>
-      <h1>Olá, {primeiroNome}</h1>
+      <h1>{tituloFinal}</h1>
       <div className={styles.actions}>
         {reload && (
           <button
