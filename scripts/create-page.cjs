@@ -12,6 +12,7 @@ if (!name) {
 const pageDir = path.join(__dirname, `../src/pages/${name}`);
 const tsxFile = `${name}.tsx`;
 const cssFile = `${name}.module.css`;
+const exportFile = "index.ts"
 
 if (fs.existsSync(pageDir)) {
   console.error("❌ Essa página já existe.");
@@ -24,7 +25,7 @@ fs.writeFileSync(
   path.join(pageDir, tsxFile),
   `import styles from './${cssFile}';
 
-export default function ${name}() {
+export function ${name}() {
   return <div className={styles.container}>\n\t\tHello, ${name}!\n\t</div>;
 }
 `
@@ -37,5 +38,15 @@ fs.writeFileSync(
 }
 `
 );
+
+fs.writeFileSync(
+  path.join(pageDir, exportFile),
+  `export * from \"./${name}\"`
+);
+
+fs.appendFileSync(
+  path.join(__dirname, "../src/pages/index.ts"),
+  `export * from \"./${name}\"`
+)
 
 console.log(`✅ Pagina ${name} criada em src/pages/${name}`);

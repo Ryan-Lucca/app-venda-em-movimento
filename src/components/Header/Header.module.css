@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  height: 60px;
+  width: 430px;
+  align-items: center;
+  padding: 0 12px; /* aqui mantém o padding */
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  z-index: 10;
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box; /* MUITO IMPORTANTE */
+}
+
+
+
+.perfil{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: #EBEBEB;
+    justify-content: center;
+    align-items: center;
+}
+
+.reloadButton{
+  background-color: transparent;
+  height: min-content;
+  width: min-content;
+  border: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
