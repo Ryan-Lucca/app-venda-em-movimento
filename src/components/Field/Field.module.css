@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.container label{
+  margin-left: 11.11px;
+  color: #757575;
+}
+
+.required {
+  color: red;
+}
+
+.InputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  border-radius: 48px;
+  background-color: white;
+  max-width: 100%;
+  max-width: 300px;
+}
+
+.prefix {
+  margin-right: 6px;
+  color: #333;
+  font-weight: bold;
+}
+
+.InputWrapper input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+}

@@ -1,11 +1,12 @@
 import Layout from './components/Layout/Layout'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, Carteira, Meta, Hub} from "./pages"
+import { Home, Carteira, Meta, Hub, Login} from "./pages"
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/login' element={<Login/>}/>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/carteira" element={<Carteira />} />
